@@ -8,11 +8,11 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "motion/react";
+} from "framer-motion";
 import React, { PropsWithChildren, useRef } from "react";
 
 import { cn } from "@/lib/utils";
-  
+
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
   iconSize?: number;
@@ -20,6 +20,8 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
   iconDistance?: number;
   direction?: "top" | "middle" | "bottom";
   children: React.ReactNode;
+  position?: "fixed" | "absolute";
+  margin?: string | number;
 }
 
 const DEFAULT_SIZE = 40;
@@ -27,7 +29,18 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto flex h-[58px] w-max gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  {
+    variants: {
+      border: {
+        true: "border",
+        false: "border-0",
+      },
+    },
+    defaultVariants: {
+      border: true,
+    },
+  }
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -39,9 +52,11 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       iconMagnification = DEFAULT_MAGNIFICATION,
       iconDistance = DEFAULT_DISTANCE,
       direction = "middle",
+      position = "fixed",
+      margin = "1rem",
       ...props
     },
-    ref,
+    ref
   ) => {
     const mouseX = useMotionValue(Infinity);
 
@@ -60,22 +75,32 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       });
     };
 
+    const marginStyle = typeof margin === "number" ? `${margin}px` : margin;
+
     return (
-      <motion.div
-        ref={ref}
-        onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
-        {...props}
-        className={cn(dockVariants({ className }), {
-          "items-start": direction === "top",
-          "items-center": direction === "middle",
-          "items-end": direction === "bottom",
+      <div
+        className={cn({
+          "fixed bottom-0 left-0 right-0 pb-[var(--dock-margin)]": position === "fixed",
+          "absolute bottom-0 left-0 right-0 pb-[var(--dock-margin)]": position === "absolute",
         })}
+        style={{ "--dock-margin": marginStyle } as React.CSSProperties}
       >
-        {renderChildren()}
-      </motion.div>
+        <motion.div
+          ref={ref}
+          onMouseMove={(e) => mouseX.set(e.pageX)}
+          onMouseLeave={() => mouseX.set(Infinity)}
+          {...props}
+          className={cn(dockVariants({ className }), {
+            "items-start": direction === "top",
+            "items-center": direction === "middle",
+            "items-end": direction === "bottom",
+          })}
+        >
+          {renderChildren()}
+        </motion.div>
+      </div>
     );
-  },
+  }
 );
 
 Dock.displayName = "Dock";
@@ -112,7 +137,7 @@ const DockIcon = ({
   const sizeTransform = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [size, magnification, size],
+    [size, magnification, size]
   );
 
   const scaleSize = useSpring(sizeTransform, {
@@ -126,8 +151,8 @@ const DockIcon = ({
       ref={ref}
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className,
+        "flex aspect-square cursor-pointer items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:bg-white/20",
+        className
       )}
       {...props}
     >
