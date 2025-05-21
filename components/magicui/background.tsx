@@ -10,6 +10,7 @@ export function DotPatternWithGlowEffectDemo({ children }: { children: React.Rea
         glow={true}
         className={cn(
           "z-10",
+          "fixed",
           "opacity-100", 
           "[mask-image:radial-gradient(circle at center, white 40%, transparent 100%)]"
         )}

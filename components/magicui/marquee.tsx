@@ -37,6 +37,7 @@ export function Marquee({
   children,
   vertical = false,
   repeat = 4,
+  edgeOffset = 20,
   ...props
 }: MarqueeProps) {
   return (
