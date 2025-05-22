@@ -21,7 +21,7 @@ export default function ContactForm() {
 
     if (res.ok) {
       setStatus("Message sent successfully!");
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", message: "" }); 
     } else {
       setStatus("Failed to send message.");
     }
@@ -32,7 +32,7 @@ export default function ContactForm() {
       <input
         name="name"
         placeholder="Your Name"
-        value={form.name}
+        value={form.name} 
         onChange={handleChange}
         required
         className="mb-2 p-2 border rounded"
@@ -43,7 +43,7 @@ export default function ContactForm() {
         placeholder="Your Email"
         value={form.email}
         onChange={handleChange}
-        required
+        required  
         className="mb-2 p-2 border rounded"
       />
       <textarea

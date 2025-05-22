@@ -1,21 +1,31 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function POST(req: Request) {
-  const { name, email, message } = await req.json();
+const password = process.env.EMAIL_PASSWORD
+const myusername = process.env.MY_EMAIL
+
+
+export async function POST(req: NextRequest) {
+  let name, email, message;
+  
+  try {
+    ({ name, email, message } = await req.json());
+  } catch (error) {
+    console.error("facing error while sending smtp req", error);
+    return NextResponse.json({ success: false, message: "Invalid request data" }, { status: 400 });
+  }
 
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: "jha02305@gmail.com",
-      pass: process.env.EMAIL_PASSWORD,
+      user: myusername,
+      pass: password,
     },
   });
 
   const mailOptions = {
-    from: email,
-    to: "rakeshjhanda9958@gmail.com", // your receiving email
-    subject: `New contact form submission from ${name}`,
+    to: myusername, 
+    subject: `Received a Message from ${name}`,
     text: message,
   };
 
