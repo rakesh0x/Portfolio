@@ -10,7 +10,7 @@ import { cn } from "../../lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { DotPatternWithGlowEffectDemo } from "@/components/magicui/background";
 import Projects from "@/components/projects/projects";
-
+import ContactForm from "@/components/magicui/contact/transporter/transporter";
 
 export default function Home() {
   const [text, setText] = useState("Full Stack Developer");
@@ -54,7 +54,7 @@ export default function Home() {
   ];
 
   const [firstRow, secondRow] = useMemo(() => {
-    const half = Math.ceil(techstack.length / 2);
+    const half = Math.ceil(techstack.length / 2); 
     return [techstack.slice(0, half), techstack.slice(half)];
   }, []);
 
@@ -173,6 +173,10 @@ export default function Home() {
         {/* Projects section  */}
 
         <Projects/>
+
+        {/* contactform */}
+
+        <ContactForm/>
         
       </DotPatternWithGlowEffectDemo>
     </div>
