@@ -11,6 +11,7 @@ import { Marquee } from "@/components/magicui/marquee";
 import { DotPatternWithGlowEffectDemo } from "@/components/magicui/background";
 import Projects from "@/components/projects/projects";
 import ContactForm from "@/components/magicui/contact/transporter/transporter";
+import { FloatingDockDemo } from "@/components/magicui/floatingdock";
 
 export default function Home() {
   const [text, setText] = useState("Full Stack Developer");
@@ -170,14 +171,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Projects section  */}
+        <div className="fixed top-1/2 z-50 left-1/3 z-index">
+          <FloatingDockDemo/>
+        </div>
 
         <Projects/>
-
-        {/* contactform */}
-
         <ContactForm/>
-        
+
+                
       </DotPatternWithGlowEffectDemo>
     </div>
   );

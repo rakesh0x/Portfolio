@@ -4,6 +4,7 @@ import "./globals.css";
 import { DotPatternWithGlowEffectDemo } from "@/components/magicui/background";
 import { ReactElement, ReactNode } from 'react';
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
