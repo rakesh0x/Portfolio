@@ -171,7 +171,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="fixed top-1/2 z-50 left-1/3 z-index">
+        <div className="fixed top-1/2 z-50 left-1/3 z-index mt-8">
           <FloatingDockDemo/>
         </div>
 

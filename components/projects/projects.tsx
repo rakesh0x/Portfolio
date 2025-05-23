@@ -47,7 +47,6 @@ export default function Projects() {
         }
     ];
     
-    // Split projects into columns with 2 projects each
     const columns = [];
     for (let i = 0; i < projects.length; i += 2) {
         columns.push(projects.slice(i, i + 2));
@@ -92,13 +91,13 @@ export default function Projects() {
                     className="flex flex-wrap justify-center gap-8"
                 >
                     {columns.map((column, columnIndex) => (
-                        <div key={columnIndex} className="flex flex-col gap-8 w-full max-w-md">
+                        <div key={columnIndex} className="flex flex-col gap-8 w-full max-w-md z-40">
                             {column.map((project, index) => (
                                 <div
                                     key={index}
                                     className="flex flex-col item-center space-y-4 group relative overflow-hidden rounded-2xl border border-gray-700/50 bg-gray-800/30   hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500"
                                 >
-                                    <BorderBeam size={100} duration={8}/> 
+                                    <BorderBeam size={300} duration={8}/> 
                                     <div className="absolute -right-12 -top-12 z-10">
                                         <div className="bg-purple-600/20 w-24 h-24 rounded-full"></div>
                                     </div>
@@ -109,12 +108,12 @@ export default function Projects() {
                                     <div className="relative h-56 overflow-hidden">
                                         <Image
                                             src={project.image}
-                                            alt={project.name}
+                                             alt={project.name}
                                             width={500} height={450}
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                                             loading="lazy"
                                         />
-                                        <BorderBeam size={200} duration={8}/>
+                                        <BorderBeam size={300} duration={8}/>
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
                                     </div>
                                     
@@ -154,4 +153,4 @@ export default function Projects() {
             </div>
         </div>
     )
-}
+}   
