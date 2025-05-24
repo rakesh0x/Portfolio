@@ -18,6 +18,8 @@ interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   pauseOnHover?: boolean;
   /**
    * Content to be displayed in the marquee
+   */
+  children?: React.ReactNode;
   /**
    * Whether to animate vertically instead of horizontally
    * @default false
@@ -28,6 +30,11 @@ interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
    * @default 4
    */
   repeat?: number;
+  /**
+   * Offset from the edge
+   * @default 20
+   */
+  edgeOffset?: number;
 }
 
 export function Marquee({

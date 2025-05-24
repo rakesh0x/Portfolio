@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { DotPatternWithGlowEffectDemo } from "@/components/magicui/background";
 import Projects from "@/components/projects/projects";

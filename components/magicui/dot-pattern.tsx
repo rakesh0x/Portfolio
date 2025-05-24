@@ -12,6 +12,7 @@ interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   cy?: number;
   cr?: number;
   className?: string;
+  glow?: boolean;
   [key: string]: unknown;
 }
 
@@ -24,6 +25,7 @@ export function DotPattern({
   cy = 1,
   cr = 1,
   className,
+  glow = false,
   ...props
 }: DotPatternProps) {
   const containerRef = useRef<SVGSVGElement>(null); 
