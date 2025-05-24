@@ -12,6 +12,7 @@ import { DotPatternWithGlowEffectDemo } from "@/components/magicui/background";
 import Projects from "@/components/projects/projects";
 import ContactForm from "@/components/magicui/contact/transporter/transporter";
 import { FloatingDockDemo } from "@/components/magicui/floatingdock";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 
 export default function Home() {
   const [text, setText] = useState("Full Stack Developer");
@@ -74,6 +75,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-900 to-black">
       <DotPatternWithGlowEffectDemo>
+        <ScrollProgress/>
         <div className="container mx-auto px-4 py-16 flex flex-col items-center">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full max-w-6xl">
             {/* Text Content */}
@@ -101,7 +103,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4 mt-2">
                 <Link
-                  href="/contact"
+                  href="https://drive.google.com/file/d/1uZssSwgq0hubHlPlSpKZgckb_VSrTnmb/view"
                   className={buttonVariants({
                     variant: "default",
                     size: "lg",
