@@ -9,6 +9,9 @@ import {
   IconHome,
   IconNewSection,
   IconTerminal2,
+  IconAddressBook,
+  IconBrandLinkedin,
+  IconFiles
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
@@ -18,43 +21,37 @@ export function FloatingDockDemo() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
       ),
-      
+      href: "#",
     },
 
     {
-      title: "Products",
+      title: "Projects",
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#",
     },
     {
-      title: "Components",
+      title: "Contact",
       icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconAddressBook className="h-full w-full text-neutral-500 dark:text-neutral-300 " />
       ),
-      href: "#",
+      href: "#",  
     },
     {
-      title: "Aceternity UI",
+      title: "Blogs",
       icon: (
-        <img
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
+        <IconFiles className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
       ),
-      href: "#",
+      href: "https://dev.to/immortalcoder_",
     },
     {
-      title: "Changelog",
+      title: "LinkedIn",
       icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.linkedin.com/in/rakesh-jha-0269892b8/",
     },
-
     {
       title: "Twitter",
       icon: (
@@ -70,12 +67,13 @@ export function FloatingDockDemo() {
       href: "https://github.com/rakesh0x",
     },
   ];
-  return (
-    <div className="flex items-center justify-center h-[35rem] w-full ">
-      <FloatingDock
-        mobileClassName="translate-y-20" 
-        items={links}
-      />
-    </div>
-  );
+
+    return (
+      <div className="flex items-center justify-center h-[35rem] w-full ">
+        <FloatingDock
+          mobileClassName="translate-y-20" 
+          items={links}
+        />
+      </div>
+    );
 }

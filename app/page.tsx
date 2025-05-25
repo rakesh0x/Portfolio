@@ -18,7 +18,7 @@ export default function Home() {
   const [text, setText] = useState("Full Stack Developer");
   const { ref, replay } = useScramble({
     text,
-    speed: 0.3,
+    speed: 0.5,
     tick: 1,
     step: 1,
     scramble: 2,
@@ -105,7 +105,7 @@ export default function Home() {
                 <Link
                   href="https://drive.google.com/file/d/1uZssSwgq0hubHlPlSpKZgckb_VSrTnmb/view"
                   className={buttonVariants({
-                    variant: "default",
+                    variant: "outline",
                     size: "lg",
                     className: "bg-purple-600 hover:bg-purple-700 text-white font-medium px-8"
                   })}
@@ -113,11 +113,11 @@ export default function Home() {
                   Hire Me
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="https://github.com/rakesh0x"
                   className={buttonVariants({
-                    variant: "outline",
+                    variant: "secondary",
                     size: "lg",
-                    className: "border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-6"
+                    className: "border-gray-600 hover:bg-gray-800 hover:bg-white-300"
                   })}
                 >
                   View My Work
