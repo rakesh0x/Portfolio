@@ -11,7 +11,8 @@ import {
   IconTerminal2,
   IconAddressBook,
   IconBrandLinkedin,
-  IconFiles
+  IconFiles,
+  IconPhone
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
@@ -21,7 +22,7 @@ export function FloatingDockDemo() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
       ),
-      href: "#",
+      href: "#Home",
     },
 
     {
@@ -29,19 +30,19 @@ export function FloatingDockDemo() {
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#Projects",
     },
     {
       title: "Contact",
       icon: (
-        <IconAddressBook className="h-full w-full text-neutral-500 dark:text-neutral-300 " />
+        <IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300 " />
       ),
-      href: "#",  
+      href: "#ContactSection",  
     },
     {
       title: "Blogs",
       icon: (
-        <IconFiles className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
+        <IconFiles className="h-10 w-10 text-neutral-500 dark:text-neutral-300"/>
       ),
       href: "https://dev.to/immortalcoder_",
     },
