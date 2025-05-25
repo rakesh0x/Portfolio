@@ -72,7 +72,7 @@ export default function Projects() {
 
     return (
          <section id="Projects">
-            <div className="min-h-screen">
+            <div className="min-h-screen z-30">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
@@ -99,10 +99,10 @@ export default function Projects() {
                                 {column.map((project, index) => (
                                     <div
                                         key={index}
-                                        className="flex flex-col item-center space-y-4 group relative overflow-hidden rounded-2xl border border-gray-700/50 bg-gray-800/30   hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500"
+                                        className="flex flex-col item-center space-y-4 group relative overflow-hidden border border-gray-700/50 bg-gray-800/30   hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500"
                                     >
                                         <BorderBeam size={300} duration={8}/> 
-                                        <div className="absolute -right-12 -top-12 z-10">
+                                        <div className="absolute -right-12 -top-12 z-50">
                                             <div className="bg-purple-600/20 w-24 h-24 rounded-full"></div>
                                         </div>
                                         <div className="absolute -left-8 -bottom-8 z-10">

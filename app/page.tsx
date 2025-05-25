@@ -90,15 +90,17 @@ export default function Home() {
                 onFocus={replay}
               />
 
-              <div className="max-w-2xl mb-8 text-gray-300 text-base md:text-lg leading-relaxed space-y-4">
+              <div className="max-w-2xl mb-8 text-gray-300 text-base md:text-lg leading-relaxed space-y-4 font-semibold">
                 <p>
-                  Hi there! I'm Rakesh, a passionate Full-Stack Developer crafting exceptional digital experiences
-                  that blend intuitive design with powerful functionality.
+                  Hi there! I'm Rakesh, a passionate Full-Stack Developer dedicated to crafting exceptional digital experiences that combine intuitive design with robust functionality.
                 </p>
                 <p>
-                  I'm obsessed with continuous learning—whether it's a new framework or development tool.
-                  Always open to collaborating on innovative projects!
+                  I'm deeply committed to continuous learning—whether it's exploring a new framework or mastering a development tool. I'm always open to collaborating on innovative projects!
                 </p>
+                <p>
+                  Besides coding, you'll often find me on X (formerly Twitter) or watching insightful YouTube videos.
+                </p>
+
               </div>
 
               <div className="flex flex-wrap gap-4 mt-2">
