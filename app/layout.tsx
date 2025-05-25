@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { DotPatternWithGlowEffectDemo } from "@/components/magicui/background";
 import { ReactElement, ReactNode } from 'react';
-
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <DotPatternWithGlowEffectDemo>
           <div className={`${geistSans.variable} ${geistMono.variable}`}>
             {children}
+            <Analytics />
           </div>
         </DotPatternWithGlowEffectDemo>
       </body>
