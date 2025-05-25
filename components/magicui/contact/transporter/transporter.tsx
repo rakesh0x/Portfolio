@@ -37,12 +37,7 @@ export default function ContactForm() {
   };
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max mt-10 -w-xl mx-auto p-6 rounded-xl bg-white/10 backdrop-blur-sm "
-    >
+    <div className="mt-30 p-6 rounded-xl bg-white/10 max-w-2xl mx-auto"> 
       <h2 className="text-3xl font-bold text-center mb-6 text-white">Get In Touch</h2>
       <p className="text-center mb-8 text-white/80">
         Have a project in mind or want to collaborate? Feel free to reach out!
@@ -51,7 +46,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-1">
-            Your Name
+            Your Name 
           </label>
           <input
             id="name"
@@ -126,6 +121,6 @@ export default function ContactForm() {
           </motion.div>
         )}
       </form>
-    </motion.div>
+    </div>
   );
 }

@@ -32,7 +32,7 @@ export default function Home() {
     const interval = setInterval(() => {
       indexRef.current = (indexRef.current + 1) % titles.length;
       setText(titles[indexRef.current]);
-    }, 5000); // slower cycle
+    }, 5000); 
     return () => clearInterval(interval);
   }, []);
 
@@ -132,16 +132,15 @@ export default function Home() {
                 <Link href="https://twitter.com/immortalcoder_" className="text-gray-400 hover:text-white" aria-label="Twitter">
                   <Twitter size={22} />
                 </Link>
-                <Link href="https://linkedin.com/" className="text-gray-400 hover:text-white" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/rakesh-jha-0269892b8/" className="text-gray-400 hover:text-white" aria-label="LinkedIn">
                   <Linkedin size={22} />
                 </Link>
-                <Link href="mailto:contact@example.com" className="text-gray-400 hover:text-white" aria-label="Email">
+                <a href="mailto:rakeshjhanda9958@gmail.com" className="text-gray-400 hover:text-white" aria-label="Email">
                   <Mail size={22} />
-                </Link>
+                </a>
               </div>
             </div>
 
-            {/* Profile Image */}
             <div className="flex-shrink-0 relative">
               <div className="rounded-full bg-purple-600/20 p-1">
                 <Image
@@ -155,7 +154,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tech Stack Marquee */}
           <div className="w-full my-8 ">
             <h2 className="text-xl font-bold text-center mb-4 text-white">My Tech Stack</h2>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
