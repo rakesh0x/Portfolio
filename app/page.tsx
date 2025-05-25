@@ -13,6 +13,7 @@ import Projects from "@/components/projects/projects";
 import ContactForm from "@/components/magicui/contact/transporter/transporter";
 import { FloatingDockDemo } from "@/components/magicui/floatingdock";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { Footer } from "@/components/ui/footer";
 
 export default function Home() {
   const [text, setText] = useState("Full Stack Developer");
@@ -174,11 +175,17 @@ export default function Home() {
         <div className="fixed top-1/2 z-50 left-1/3 z-index mt-8">
           <FloatingDockDemo/>
         </div>
-
+        {/* project component*/}
         <Projects/>
+        <br/><br/>
+        <br/><br/>
+        {/* contact form components */}
         <ContactForm/>
-
-                
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        {/* footer components */}
+        <Footer/>
       </DotPatternWithGlowEffectDemo>
     </div>
   );
