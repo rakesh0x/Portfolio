@@ -6,6 +6,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Code } from "lucide-react";
 import { BorderBeam } from "../magicui/border-beam";
+import { buttonVariants } from "../ui/button";
+import { IconPlus } from "@tabler/icons-react";
+import { Button } from "../ui/button";
 
 type Project = {
     name: string;
@@ -151,8 +154,18 @@ export default function Projects() {
                             </div>
                         ))}
                     </motion.div>
+                    <Link href="https://github.com/rakesh0x" target="_blank" rel="noopener noreferrer">
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="bg-purple-600 hover:bg-purple-700 text-white font-sm cursor-pointer ml-170 mt-10"
+                        >
+                            Load More
+                            <IconPlus className="w-5 h-5 mr-2 text-neutral-500" />
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>
-    )
+    );
 }   
