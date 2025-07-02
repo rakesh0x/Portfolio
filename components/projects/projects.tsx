@@ -72,7 +72,7 @@ export default function Projects() {
 
     return (
          <section id="Projects">
-            <div className="min-h-screen z-30">
+            <div className="min-h-screen z-30 mt-20">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}

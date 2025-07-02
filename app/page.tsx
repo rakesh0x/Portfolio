@@ -14,6 +14,7 @@ import ContactForm from "@/components/magicui/contact/transporter/transporter";
 import { FloatingDockDemo } from "@/components/magicui/floatingdock";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Footer } from "@/components/ui/footer";
+import GitHubCalendar from 'react-github-calendar';
 
 export default function Home() {
   const [text, setText] = useState("Full Stack Developer");
@@ -160,6 +161,33 @@ export default function Home() {
         <div className="fixed top-1/2 z-50 left-1/3 z-index mt-8">
           <FloatingDockDemo/>
         </div>
+
+        {/* Here the Github calandar will render */}
+        <div className="w-full flex flex-col items-center justify-center mt-20 px-4 overflow-x-hidden">
+          <h2 className="text-xl font-bold mb-6 text-white text-center">My Github Contributions</h2>
+          <div className="w-full max-w-full ml-130">
+            
+            <GitHubCalendar
+              username="rakesh0x"
+              blockSize={15}
+              blockMargin={10}
+              colorScheme="dark"
+              fontSize={16}
+              hideColorLegend={false}
+              showWeekdayLabels={true}
+              theme={{
+                light: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'],
+                dark: ['#161B22', '#0e4429', '#006d32', '#26a641', '#39d353']
+              }}
+              labels={{
+                totalCount: '{{count}} contributions in the last year',
+              }}
+            />
+          </div>
+        </div>
+        <br/>
+        <br/>
+
         {/* project component*/}
         <Projects/>
         <br/><br/>
