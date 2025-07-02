@@ -165,7 +165,7 @@ export default function Home() {
         {/* Here the Github calandar will render */}
         <div className="w-full flex flex-col items-center justify-center mt-20 px-4 overflow-x-hidden">
           <h2 className="text-xl font-bold mb-6 text-white text-center">My Github Contributions</h2>
-          <div className="w-full max-w-full ml-130">
+          <div className="w-full max-w-full ml-112">
             
             <GitHubCalendar
               username="rakesh0x"
