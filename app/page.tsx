@@ -75,8 +75,8 @@ export default function Home() {
   ));
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-900 to-black">
-      <DotPatternWithGlowEffectDemo>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#08090a"}}>
+
         <ScrollProgress/>
         <div className="container mx-auto px-4 py-16 flex flex-col items-center">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full max-w-6xl">
@@ -199,7 +199,6 @@ export default function Home() {
         <br/><br/>
         {/* footer components */}
         <Footer/>
-      </DotPatternWithGlowEffectDemo>
     </div>
     
   );

@@ -25,13 +25,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">  
-      <body className="antialiased">
-        <DotPatternWithGlowEffectDemo>
+      <body className="min-h-screen  min-w-5xl">
           <div className={`${geistSans.variable} ${geistMono.variable}`}>
             {children}
             <Analytics />
           </div>
-        </DotPatternWithGlowEffectDemo>
       </body>
     </html>
   );
