@@ -93,15 +93,9 @@ export default function Home() {
 
               <div className="max-w-2xl mb-8 text-gray-300 text-base md:text-lg leading-relaxed space-y-4 font-semibold">
                 <p>
-                  Hi there! I'm Rakesh, a passionate Full-Stack Developer dedicated to crafting exceptional digital experiences that combine intuitive design with robust functionality.
+                Hi, I’m Rakesh from New Delhi, India — a passionate full-stack developer with a deep interest in modern web frameworks and cutting-edge technologies. I love to code and spend most of my time building, experimenting, or occasionally shitposting on X (where I’m super active). I'm also a strong advocate for open-source and actively contribute to projects that help push the community forward.
+                Whether it's freelance work, collaborations, or something exciting — I’m open and ready to connect!
                 </p>
-                <p>
-                  I'm deeply committed to continuous learning—whether it's exploring a new framework or mastering a development tool. I'm always open to collaborating on innovative projects!
-                </p>
-                <p>
-                  Besides coding, you'll often find me on X (formerly Twitter) or watching insightful YouTube videos.
-                </p>
-
               </div>
 
               <div className="flex flex-wrap gap-4 mt-2">
