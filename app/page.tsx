@@ -78,7 +78,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#08090a"}}>
 
         <ScrollProgress/>
-        <div className="container mx-auto px-4 py-16 flex flex-col items-center">
+        <div className="container mx-auto px-4 py-16 flex flex-col items-center max-w-5xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full max-w-6xl">
             <div id="Home" className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left transition-all">
               <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
@@ -165,14 +165,14 @@ export default function Home() {
         {/* Here the Github calandar will render */}
         <div className="w-full flex flex-col items-center justify-center mt-20 px-4 overflow-x-hidden">
           <h2 className="text-xl font-bold mb-6 text-white text-center">My Github Contributions</h2>
-          <div className="w-full max-w-full ml-112">
+          <div className="w-full max-w-full ml-165">
             
             <GitHubCalendar
               username="rakesh0x"
-              blockSize={15}
-              blockMargin={10}
+              blockSize={14}
+              blockMargin={6}
               colorScheme="dark"
-              fontSize={16}
+              fontSize={19}
               hideColorLegend={false}
               showWeekdayLabels={true}
               theme={{
