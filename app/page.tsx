@@ -117,7 +117,7 @@ export default function Home() {
                 (where I’m super active). I'm also a strong advocate for
                 open-source and actively contribute to projects that help push
                 the community forward. Whether it's freelance work,
-                collaborations, or something exciting — I’m open and
+                collaborations, or something exciting — I’m open and{" "}
                 <Highlighter action="highlight" color="#87CEFA">
                   ready to connect!
                 </Highlighter>
