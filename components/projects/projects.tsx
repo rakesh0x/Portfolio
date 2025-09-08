@@ -50,11 +50,6 @@ export default function Projects() {
         }
     ];
     
-    const columns = [];
-    for (let i = 0; i < projects.length; i += 2) {
-        columns.push(projects.slice(i, i + 2));
-    }
-
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -92,73 +87,70 @@ export default function Projects() {
                         variants={container}
                         initial="hidden"
                         animate="show"
-                        className="flex flex-wrap justify-center gap-8"
+                        className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center"
                     >
-                        {columns.map((column, columnIndex) => (
-                            <div key={columnIndex} className="flex flex-col gap-8 w-full max-w-md z-40">
-                                {column.map((project, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex flex-col item-center space-y-4 group relative overflow-hidden border border-gray-700/50 bg-gray-800/30   hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500"
-                                    >
-                                        <BorderBeam size={300} duration={8}/> 
-                                        <div className="absolute -right-12 -top-12 z-50">
-                                            <div className="bg-purple-600/20 w-24 h-24 rounded-full"></div>
-                                        </div>
-                                        <div className="absolute -left-8 -bottom-8 z-10">
-                                            <div className="bg-pink-600/20 w-24 h-24 rounded-full"></div>
-                                        </div>
-                                        
-                                        <div className="relative h-56 overflow-hidden">
-                                            <Image
-                                                src={project.image}
-                                                alt={project.name}
-                                                width={500} height={450}
-                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                                loading="lazy"
-                                            />
-                                            <BorderBeam size={300} duration={8}/>
-                                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
-                                        </div>
-                                        
-                                        <div className="p-6 relative z-20">
-                                            <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
-                                                <Code size={20} className="text-purple-400" />
-                                                {project.name}
-                                            </h3>
-                                            <p className="text-gray-300 mb-6 text-sm">{project.description}</p>
-                                            
-                                            <div className="flex gap-3">
-                                                <Link
-                                                    href={project.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center justify-center gap-2 flex-1 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2.5 rounded-lg transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
-                                                >
-                                                    <ExternalLink size={16} />
-                                                    Live Demo
-                                                </Link>
-                                                <Link
-                                                    href={project.github}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center justify-center gap-2 flex-1 text-sm font-medium text-white border border-gray-600 hover:border-gray-500 hover:bg-gray-700/50 px-4 py-2.5 rounded-lg transition-all duration-300"
-                                                >
-                                                    <Github size={16} />
-                                                    Code
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                ))}
-                            </div>
+                        {projects.map((project, index) => (
+                            <motion.div 
+                                key={index}
+                                variants={item}
+                                className="w-full max-w-md z-40 flex flex-col item-center space-y-4 group relative overflow-hidden border border-gray-700/50 bg-gray-800/30   hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500"
+                            >
+                                <BorderBeam size={300} duration={8}/> 
+                                <div className="absolute -right-12 -top-12 z-50">
+                                    <div className="bg-purple-600/20 w-24 h-24 rounded-full"></div>
+                                </div>
+                                <div className="absolute -left-8 -bottom-8 z-10">
+                                    <div className="bg-pink-600/20 w-24 h-24 rounded-full"></div>
+                                </div>
+                                
+                                <div className="relative h-56 overflow-hidden">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.name}
+                                        width={500} height={450}
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        loading="lazy"
+                                    />
+                                    <BorderBeam size={300} duration={8}/>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
+                                </div>
+                                
+                                <div className="p-6 relative z-20">
+                                    <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                                        <Code size={20} className="text-purple-400" />
+                                        {project.name}
+                                    </h3>
+                                    <p className="text-gray-300 mb-6 text-sm">{project.description}</p>
+                                    
+                                    <div className="flex gap-3">
+                                        <Link
+                                            href={project.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 flex-1 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2.5 rounded-lg transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
+                                        >
+                                            <ExternalLink size={16} />
+                                            Live Demo
+                                        </Link>
+                                        <Link
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 flex-1 text-sm font-medium text-white border border-gray-600 hover:border-gray-500 hover:bg-gray-700/50 px-4 py-2.5 rounded-lg transition-all duration-300"
+                                        >
+                                            <Github size={16} />
+                                            Code
+                                        </Link>
+                                    </div>
+                                </div>
+                            </motion.div> 
                         ))}
                     </motion.div>
                     <Link href="https://github.com/rakesh0x" target="_blank" rel="noopener noreferrer">
                         <Button
                             variant="outline"
                             size="lg"
-                            className="bg-purple-600 hover:bg-purple-700 text-white font-sm cursor-pointer ml-170 mt-10"
+                            className="bg-purple-600 hover:bg-purple-700 text-white font-sm cursor-pointer mx-auto block mt-10"
                         >
                             Load More
                             <IconPlus className="w-5 h-5 mr-2 text-neutral-500" />
