@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import Projects from "@/components/projects/projects";
 import ContactForm from "@/components/magicui/contact/transporter/transporter";
-import { FloatingDockDemo } from "@/components/magicui/floatingdock";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Footer } from "@/components/ui/footer";
 import GitHubCalendar from "react-github-calendar";
@@ -183,10 +182,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Floating Dock */}
-      <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50">
-        <FloatingDockDemo />
-      </div>
 
       {/* GitHub Calendar */}
       <div className="w-full flex flex-col items-center justify-center mt-12 sm:mt-20 px-3 sm:px-4 overflow-x-hidden">
