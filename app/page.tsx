@@ -106,22 +106,35 @@ export default function Home() {
             />
 
             <div className="max-w-2xl mb-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed space-y-4 font-semibold">
-              <p>
-                Hi, I’m Rakesh from New Delhi, India, a passionate{" "}
-                <Highlighter action="underline" color="#FF9800">
+              <div className="text-lg leading-relaxed text-gray-200 max-w-2xl space-y-6">
+                {/* Section 1 */}
+                <p>
+                  Hi, I’m Rakesh from New Delhi, India — a passionate{" "}
+                  <Highlighter action="underline" color="#FF9800">
                     Full-stack developer
-                </Highlighter>
-                {" "}with a deep interest in modern web frameworks and
-                cutting-edge technologies. I love to code and spend most of my
-                time building, experimenting, or occasionally shitposting on X
-                (where I’m super active). I'm also a strong advocate for
-                open-source and actively contribute to projects that help push
-                the community forward. Whether it's freelance work,
-                collaborations, or something exciting — I’m open and{" "}
-                <Highlighter action="highlight" color="#87CEFA">
-                  ready to connect!
-                </Highlighter>
-              </p>
+                  </Highlighter>
+                  {" "}with a deep interest in modern web frameworks and cutting-edge technologies.
+                </p>
+
+                {/* Section 2 */}
+                <p>
+                  I love to code and spend most of my time building, experimenting,
+                  or occasionally shitposting on X (where I’m super active).
+                  I'm also a strong advocate for open-source and actively contribute
+                  to projects that help push the community forward.
+                </p>
+
+                {/* Section 3 */}
+                <p>
+                  Whether it's freelance work, collaborations, or something exciting —
+                  I’m open and{" "}
+                  <Highlighter action="highlight" color="#87CEFA">
+                    ready to connect!
+                  </Highlighter>
+                </p>
+              </div>
+
+
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-2">
@@ -207,9 +220,7 @@ export default function Home() {
               light: ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"],
               dark: ["#161B22", "#0e4429", "#006d32", "#26a641", "#39d353"],
             }}
-            labels={{
-              totalCount: "{{count}} contributions in the last year",
-            }}
+   
           />
         </div>
       </div>
